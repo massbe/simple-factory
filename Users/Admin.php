@@ -2,13 +2,13 @@
 namespace Users;
 
 
-    class Admin
+class Admin implements User
+{
+    public function hello()
     {
-        public function hello()
-        {
-            echo "Admin, hi";
-        }
+        echo "Admin, hi";
     }
+}
 
 
 
