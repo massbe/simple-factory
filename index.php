@@ -24,12 +24,11 @@ $oneElement = new SimpleFactory();
 
 spl_autoload_register(function ($class)
 {
-    $classArray = explode('\\', $class);
-    $class = implode('/', $classArray);
+    $class = str_replace('\\', '/', $class);
     include_once ($class . ".php");
 });
 
-$fin = $oneElement->create($_POST['type']);
+$finalyOneElement = $oneElement->create($_POST['type']);
+$finalyOneElement->hello();
 
-$fin->hello();
 ?>
