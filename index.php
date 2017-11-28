@@ -6,9 +6,8 @@ use Users\SubAdmin;
 use Users\Guest;
 use Users\UserFactory;
 
-$oneElement = new UserFactory();
-
 try{
+    $oneElement = new UserFactory();
     $finalyOneElement = $oneElement->create($_POST['type']);
 }catch (Exception $e){
     echo "Что-то пошло не так. Ошибка вида: \n". $e->getMessage();

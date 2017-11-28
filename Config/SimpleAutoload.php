@@ -6,7 +6,7 @@ spl_autoload_register(function ($class)
 
     if(!file_exists($class . ".php")){
         throw new Exception("Такого файла нет");
-    }else{
-        include_once ($class . ".php");
     }
+
+    include_once ($class . ".php");
 });
