@@ -22,6 +22,7 @@ class UserFactory
             case self::ADMIN_VALUE: return new Admin(); break;
             case self::SUBADMIN_VALUE: return new SubAdmin(); break;
             case self::GUEST_VALUE: return new Guest(); break;
+            default: throw new \Exception('Этого типа пользователей нет');
         }
     }
 }

@@ -8,7 +8,11 @@ use Users\UserFactory;
 
 $oneElement = new UserFactory();
 
-$finalyOneElement = $oneElement->create($_POST['type']);
-$finalyOneElement->hello();
+try{
+    $finalyOneElement = $oneElement->create($_POST['type']);
+}catch (Exception $e){
+    echo "Что-то пошло не так. Ошибка вида: \n". $e->getMessage();
+}
 
+$finalyOneElement->hello();
 ?>
