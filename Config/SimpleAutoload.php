@@ -3,5 +3,10 @@
 spl_autoload_register(function ($class)
 {
     $class = str_replace('\\', '/', $class);
-    include_once ($class . ".php");
+
+    if(!file_exists($class . ".php")){
+        throw new Exception("Такого файла нет");
+    }else{
+        include_once ($class . ".php");
+    }
 });
